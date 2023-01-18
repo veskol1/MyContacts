@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyContacts</string>
+
+    <string name="search_contacts">Search contacts..</string>
+    <string name="permission_error">Permission denied</string>
+    <string name="contact_info_title">Contact info</string>
+    <string name="phones_title">Phones</string>
+    <string name="emails_title">Emails</string>
+</resources>
