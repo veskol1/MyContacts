@@ -2,7 +2,6 @@
 
 Created list of contacts written in Jetpack Compose
 
-## An option to filter contacts by name. 
 ## Main screen:
 - An option to filter contacts by name. 
 - Contact image if exist or First letter of his name on colored background in circular shape
