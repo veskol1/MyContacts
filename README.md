@@ -1,3 +1,3 @@
 # MyContacts
 
-![](mycontectsgif.gif)
+![](mycontectsgif.gif,  width="40" height="40")
