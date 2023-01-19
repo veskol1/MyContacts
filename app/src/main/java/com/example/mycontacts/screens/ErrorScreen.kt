@@ -19,7 +19,15 @@ fun ErrorScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(painter = painterResource(id = R.drawable.ic_error), contentDescription = null, modifier = Modifier.size(100.dp))
-        Text(text = stringResource(id = R.string.permission_error), modifier = Modifier.padding(10.dp), fontSize = 20.sp)
+        Image(
+            painter = painterResource(id = R.drawable.ic_error),
+            contentDescription = null,
+            modifier = Modifier.size(100.dp)
+        )
+        Text(
+            text = stringResource(id = R.string.permission_error),
+            modifier = Modifier.padding(10.dp),
+            fontSize = 20.sp
+        )
     }
 }

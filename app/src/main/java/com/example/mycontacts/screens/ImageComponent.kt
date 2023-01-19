@@ -2,9 +2,7 @@ package com.example.mycontacts.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -21,9 +19,10 @@ import com.example.mycontacts.model.Contact
 @Composable
 fun ImageComponent(contact: Contact, circleSize: Dp = 45.dp, circleFontSize: TextUnit = 20.sp) {
     if (contact.imageUri != null) {
-        AsyncImage(model = contact.imageUri, contentDescription = null, modifier = Modifier
-            .clip(CircleShape)
-            .size(circleSize)
+        AsyncImage(
+            model = contact.imageUri, contentDescription = null, modifier = Modifier
+                .clip(CircleShape)
+                .size(circleSize)
         )
     } else {
         Box(
@@ -36,6 +35,4 @@ fun ImageComponent(contact: Contact, circleSize: Dp = 45.dp, circleFontSize: Tex
             Text(text = contact.firstNameLetter.toString(), fontSize = circleFontSize)
         }
     }
-
-
 }

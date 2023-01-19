@@ -9,10 +9,12 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Brush
 import androidx.core.content.ContextCompat
 import com.example.mycontacts.navigation.MyAppNavHost
+import com.example.mycontacts.ui.theme.BottomGradient
 import com.example.mycontacts.ui.theme.MyContactsTheme
+import com.example.mycontacts.ui.theme.TopGradient
 import com.example.mycontacts.viewmodel.ContactsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,7 +29,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyContactsTheme {
                 MyAppNavHost(contactsViewModel = contactsViewModel, modifier = Modifier.background(
-                    Color.White))
+                    brush = Brush.verticalGradient(colors = listOf(
+                        TopGradient, BottomGradient
+                    ))
+                ))
             }
         }
     }

@@ -7,7 +7,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
@@ -24,7 +23,6 @@ import com.example.mycontacts.model.Phone
 import com.example.mycontacts.R
 import com.example.mycontacts.model.Contact
 import com.example.mycontacts.model.Email
-import com.example.mycontacts.ui.theme.BackgroundColor
 import com.example.mycontacts.ui.theme.CardColor
 import com.example.mycontacts.utils.MockData
 
@@ -34,7 +32,6 @@ fun ContactScreen(contact: Contact?) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(color = BackgroundColor)
         ) {
             Row(
                 horizontalArrangement = Arrangement.Center, modifier = Modifier
@@ -54,9 +51,10 @@ fun ContactScreen(contact: Contact?) {
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(24.dp),
-                backgroundColor = CardColor,
-                shape = RoundedCornerShape(12.dp)
+                    .padding(24.dp)
+                    .background(color = CardColor, shape = RoundedCornerShape(20.dp)),
+                elevation = 0.dp,
+                backgroundColor = Color.Transparent,
             ) {
                 Column(modifier = Modifier.padding(24.dp)) {
                     Text(
@@ -73,11 +71,10 @@ fun ContactScreen(contact: Contact?) {
             }
         }
     }
-
 }
 
 @Composable
-fun Phones(numbers: MutableSet<Phone>) {
+private fun Phones(numbers: MutableSet<Phone>) {
     Text(
         text = stringResource(id = R.string.phones_title),
         fontSize = 18.sp,
@@ -89,7 +86,7 @@ fun Phones(numbers: MutableSet<Phone>) {
 }
 
 @Composable
-fun PhoneRow(phone: Phone) {
+private fun PhoneRow(phone: Phone) {
     Row(modifier = Modifier.padding(8.dp)) {
         Image(
             painter = painterResource(id = R.drawable.ic_phone),
@@ -114,7 +111,7 @@ fun PhoneRow(phone: Phone) {
 }
 
 @Composable
-fun Emails(emails: MutableSet<Email>) {
+private fun Emails(emails: MutableSet<Email>) {
     Text(
         text = stringResource(id = R.string.emails_title),
         fontSize = 18.sp,
@@ -126,7 +123,7 @@ fun Emails(emails: MutableSet<Email>) {
 }
 
 @Composable
-fun EmailRow(email: Email) {
+private fun EmailRow(email: Email) {
     Row(modifier = Modifier.padding(6.dp)) {
         Image(
             painter = painterResource(id = R.drawable.ic_email),
@@ -151,9 +148,8 @@ fun EmailRow(email: Email) {
     }
 }
 
-
 @Composable
-@Preview
+@Preview()
 private fun ContactScreenPreview() {
     ContactScreen(MockData().getMockContact())
 }
